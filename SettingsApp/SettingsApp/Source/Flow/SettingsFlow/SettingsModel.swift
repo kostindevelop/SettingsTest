@@ -18,7 +18,6 @@ protocol SettingsModelNavigationHandler {
 }
 
 protocol SettingsModelProtocol: AnyObject {
-    var navigationHandler: SettingsModelNavigationHandler? { get set }
     func actionHandler(_ action: SettingsActionType)
 }
 
@@ -36,25 +35,29 @@ final class SettingsModel: SettingsModelProtocol {
         case logout
     }
     
-    var navigationHandler: SettingsModelNavigationHandler?
+    private let navigationHandler: SettingsModelNavigationHandler
+    
+    init(navigationHandler: SettingsModelNavigationHandler) {
+        self.navigationHandler = navigationHandler
+    }
     
     func actionHandler(_ action: ActionType) {
         // switch action реализовал тут в случае если прийдется обработать какой то запрос или логику
         switch action {
         case .notificationSettings:
-            navigationHandler?.settingsModelNotificationSettingsAction(self)
+            navigationHandler.settingsModelNotificationSettingsAction(self)
         case .changeLanguage:
-            navigationHandler?.settingsModelChangeLanguageAction(self)
+            navigationHandler.settingsModelChangeLanguageAction(self)
         case .subscription:
-            navigationHandler?.settingsModelSubscriptionAction(self)
+            navigationHandler.settingsModelSubscriptionAction(self)
         case .changePassword:
-            navigationHandler?.settingsModelChangePasswordAction(self)
+            navigationHandler.settingsModelChangePasswordAction(self)
         case .resetAllData:
-            navigationHandler?.settingsModelResetAllDataAction(self)
+            navigationHandler.settingsModelResetAllDataAction(self)
         case .deleteAccount:
-            navigationHandler?.settingsModelDeleteAccountAction(self)
+            navigationHandler.settingsModelDeleteAccountAction(self)
         case .logout:
-            navigationHandler?.settingsModelLogoutAction(self)
+            navigationHandler.settingsModelLogoutAction(self)
         }
     }
 }

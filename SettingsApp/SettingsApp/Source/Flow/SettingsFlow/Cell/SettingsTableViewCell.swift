@@ -19,7 +19,7 @@ class SettingsTableViewCell: UITableViewCell {
         let stackView = UIStackView()
         stackView.axis = .horizontal
         stackView.spacing = 8
-        stackView.alignment = .center // Выровнять элементы по центру вертикально
+        stackView.alignment = .center
         return stackView
     }()
     
@@ -121,7 +121,7 @@ class SettingsTableViewCell: UITableViewCell {
 @available(iOS 17, *)
 #Preview(traits: .fixedLayout(width: 343, height: 56)) {
     let cell = SettingsTableViewCell()
-    cell.setup(.init(leftIcon: UIImage(named: "ic_email"),
+    cell.setup(.init(leftIcon: UIImage(named: "ic_email")!,
                      titleText: "Email",
                      subtitleText: "English",
                      rightIcon: .icChevron,

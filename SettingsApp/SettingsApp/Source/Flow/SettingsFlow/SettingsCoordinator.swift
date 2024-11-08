@@ -14,19 +14,16 @@ protocol SettingsCoordinatorNavigationHandler: AnyObject {
 final class SettingsCoordinator {
     
     private let navigationController: UINavigationController
-    private let viewModel: SettingsViewModel
-    private let model: SettingsModelProtocol
     private weak var navigationHandler: SettingsCoordinatorNavigationHandler?
 
     init(navigationController: UINavigationController, navigationHandler: SettingsCoordinatorNavigationHandler?) {
         self.navigationController = navigationController
         self.navigationHandler = navigationHandler
-        self.model = SettingsModel()
-        self.viewModel = SettingsViewModel(model: model)
-        self.model.navigationHandler = self
     }
 
     func start() {
+        let model = SettingsModel(navigationHandler: self)
+        let viewModel = SettingsViewModel(model: model)
         let viewController = SettingsViewController(viewModel: viewModel)
         navigationController.pushViewController(viewController, animated: true)
     }

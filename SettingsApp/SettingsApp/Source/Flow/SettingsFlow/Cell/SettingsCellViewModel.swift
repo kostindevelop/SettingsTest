@@ -9,18 +9,18 @@ import UIKit
 
 final class SettingsCellViewModel {
     
-    let leftIcon: UIImage?
+    let leftIcon: UIImage
     let titleText: String
     let subtitleText: String?
     let rightIcon: UIImage?
-    let onSelect: () -> Void
+    let onSelect: (() -> Void)?
     
     init(
-        leftIcon: UIImage?,
+        leftIcon: UIImage,
         titleText: String,
-        subtitleText: String?,
-        rightIcon: UIImage?,
-        onSelect: @escaping () -> Void
+        subtitleText: String? = nil,
+        rightIcon: UIImage? = nil,
+        onSelect: (() -> Void)? = nil
     ) {
         self.leftIcon = leftIcon
         self.titleText = titleText

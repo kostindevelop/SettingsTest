@@ -52,24 +52,24 @@ private extension SettingsViewModel {
     
     func profileSection() -> Section {
         .init(
-            title: "Profile",
+            title: AppStrings.Settings.sectionTitleProfile,
             type: .profile,
             cellViewModels: [
-                .init(leftIcon: .icProfile, titleText: "Name", subtitleText: "Robert Fox", rightIcon: nil, onSelect: {}),
-                .init(leftIcon: .icEmail, titleText: "Email", subtitleText: "kostindevelop@gmail.com", rightIcon: nil, onSelect: {})
+                .init(leftIcon: .icProfile, titleText: AppStrings.Settings.name, subtitleText: "Robert Fox"),
+                .init(leftIcon: .icEmail, titleText: AppStrings.Settings.email, subtitleText: "kostindevelop@gmail.com")
             ]
         )
     }
     
     func preferencesSection() -> Section {
         .init(
-            title: "Preferences",
+            title: AppStrings.Settings.sectionTitlePreferences,
             type: .preferences,
             cellViewModels: [
-                .init(leftIcon: .icNotification, titleText: "Notfication settings", subtitleText: nil, rightIcon: .init(named: "ic_chevron"), onSelect: { [weak model] in
+                .init(leftIcon: .icNotification, titleText: AppStrings.Settings.notificationSettings, rightIcon: .init(named: "ic_chevron"), onSelect: { [weak model] in
                     model?.actionHandler(.notificationSettings)
                 }),
-                .init(leftIcon: .icLanguage, titleText: "Language", subtitleText: "English", rightIcon: .init(named: "ic_chevron"), onSelect: { [weak model] in
+                .init(leftIcon: .icLanguage, titleText: AppStrings.Settings.language, subtitleText: "English", rightIcon: .init(named: "ic_chevron"), onSelect: { [weak model] in
                     model?.actionHandler(.changeLanguage)
                 })
             ]
@@ -78,10 +78,10 @@ private extension SettingsViewModel {
     
     func subscriptionsSection() -> Section {
         .init(
-            title: "Subscription",
+            title: AppStrings.Settings.sectionTitleSubscription,
             type: .subscription,
             cellViewModels: [
-                .init(leftIcon: .icSubscription, titleText: "Subscription", subtitleText: "Not purchased", rightIcon: .init(named: "ic_chevron"), onSelect: { [weak model] in
+                .init(leftIcon: .icSubscription, titleText: AppStrings.Settings.subscription, subtitleText: "Not purchased purchased purchased", rightIcon: .init(named: "ic_chevron"), onSelect: { [weak model] in
                     model?.actionHandler(.subscription)
                 }),
             ]
@@ -90,19 +90,19 @@ private extension SettingsViewModel {
     
     func accountSection() -> Section {
         .init(
-            title: "Account",
+            title: AppStrings.Settings.sectionTitleAccount,
             type: .account,
             cellViewModels: [
-                .init(leftIcon: .icPassword, titleText: "Change password", subtitleText: nil, rightIcon: nil, onSelect: { [weak model] in
+                .init(leftIcon: .icPassword, titleText: AppStrings.Settings.changePassword, onSelect: { [weak model] in
                     model?.actionHandler(.changePassword)
                 }),
-                .init(leftIcon: .icResetData, titleText: "Reset all data", subtitleText: nil, rightIcon: nil, onSelect: { [weak model] in
+                .init(leftIcon: .icResetData, titleText: AppStrings.Settings.resetAllData, onSelect: { [weak model] in
                     model?.actionHandler(.resetAllData)
                 }),
-                .init(leftIcon: .icDeleteAccount, titleText: "Delete account", subtitleText: nil, rightIcon: nil, onSelect: { [weak model] in
+                .init(leftIcon: .icDeleteAccount, titleText: AppStrings.Settings.deleteAccount, onSelect: { [weak model] in
                     model?.actionHandler(.deleteAccount)
                 }),
-                .init(leftIcon: .icLogout, titleText: "Log Out", subtitleText: nil, rightIcon: nil, onSelect: { [weak model] in
+                .init(leftIcon: .icLogout, titleText: AppStrings.Settings.logout, onSelect: { [weak model] in
                     model?.actionHandler(.logout)
                 })
             ]

@@ -12,7 +12,6 @@ import SnapKit
 final class SettingsViewController: BaseViewController {
     
     private let tableView = UITableView(frame: .zero, style: .grouped)
-    
     private let viewModel: SettingsViewModelProtocol
     
     init(viewModel: SettingsViewModelProtocol) {
@@ -26,35 +25,6 @@ final class SettingsViewController: BaseViewController {
         
         setupView()
         setupNavigationController()
-    }
-}
-
-// MARK: - Private methods
-private extension SettingsViewController {
-    
-    func setupView() {
-        view.backgroundColor = UIColor(ColorStyle.mainBackground)
-        
-        view.addSubview(tableView)
-        tableView.snp.makeConstraints {
-            $0.top.equalToSuperview().offset(55)
-            $0.leading.trailing.equalToSuperview().inset(16)
-            $0.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
-        }
-        tableView.backgroundColor = .clear
-        tableView.separatorStyle = .none
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.showsVerticalScrollIndicator = false
-        tableView.register(SettingsTableViewCell.self, forCellReuseIdentifier: SettingsTableViewCell.identifier)
-                view.addSubview(tableView)
-        tableView.register(TitleLabelHeaderView.self, forHeaderFooterViewReuseIdentifier: TitleLabelHeaderView.identifier)
-    }
-    
-    func setupNavigationController() {
-        title = "Settings"
-        navigationController?.navigationBar.prefersLargeTitles = true
-        navigationItem.largeTitleDisplayMode = .always
     }
 }
 
@@ -102,7 +72,7 @@ extension SettingsViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        viewModel.sections[indexPath.section].cellViewModels[indexPath.row].onSelect()
+        viewModel.sections[indexPath.section].cellViewModels[indexPath.row].onSelect?()
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -111,6 +81,35 @@ extension SettingsViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 46
+    }
+}
+
+// MARK: - Private methods
+private extension SettingsViewController {
+    
+    func setupView() {
+        view.backgroundColor = UIColor(ColorStyle.mainBackground)
+        
+        view.addSubview(tableView)
+        tableView.snp.makeConstraints {
+            $0.top.equalToSuperview().offset(55)
+            $0.leading.trailing.equalToSuperview().inset(16)
+            $0.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
+        }
+        tableView.backgroundColor = .clear
+        tableView.separatorStyle = .none
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.showsVerticalScrollIndicator = false
+        tableView.register(SettingsTableViewCell.self, forCellReuseIdentifier: SettingsTableViewCell.identifier)
+                view.addSubview(tableView)
+        tableView.register(TitleLabelHeaderView.self, forHeaderFooterViewReuseIdentifier: TitleLabelHeaderView.identifier)
+    }
+    
+    func setupNavigationController() {
+        title = AppStrings.Settings.title
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.largeTitleDisplayMode = .always
     }
 }
 
