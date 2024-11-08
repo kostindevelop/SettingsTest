@@ -81,7 +81,7 @@ private extension SettingsViewModel {
             title: AppStrings.Settings.sectionTitleSubscription,
             type: .subscription,
             cellViewModels: [
-                .init(leftIcon: .icSubscription, titleText: AppStrings.Settings.subscription, subtitleText: "Not purchased purchased purchased", rightIcon: .init(named: "ic_chevron"), onSelect: { [weak model] in
+                .init(leftIcon: .icSubscription, titleText: AppStrings.Settings.subscription, subtitleText: "Not purchased", rightIcon: .init(named: "ic_chevron"), onSelect: { [weak model] in
                     model?.actionHandler(.subscription)
                 }),
             ]
