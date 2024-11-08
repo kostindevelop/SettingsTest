@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		3E9AA6202CDE2CF000733571 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 3E9AA61F2CDE2CF000733571 /* SnapKit */; };
-		3E9AA6222CDE2CF000733571 /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 3E9AA6212CDE2CF000733571 /* SnapKit-Dynamic */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,7 +41,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				3E9AA6202CDE2CF000733571 /* SnapKit in Frameworks */,
-				3E9AA6222CDE2CF000733571 /* SnapKit-Dynamic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,7 +84,6 @@
 			name = SettingsApp;
 			packageProductDependencies = (
 				3E9AA61F2CDE2CF000733571 /* SnapKit */,
-				3E9AA6212CDE2CF000733571 /* SnapKit-Dynamic */,
 			);
 			productName = SettingsApp;
 			productReference = 3E9AA5DE2CDE1E1D00733571 /* SettingsApp.app */;
@@ -374,11 +371,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 3E9AA61E2CDE2CF000733571 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
-		};
-		3E9AA6212CDE2CF000733571 /* SnapKit-Dynamic */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 3E9AA61E2CDE2CF000733571 /* XCRemoteSwiftPackageReference "SnapKit" */;
-			productName = "SnapKit-Dynamic";
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
