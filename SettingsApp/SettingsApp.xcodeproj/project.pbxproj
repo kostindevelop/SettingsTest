@@ -6,15 +6,20 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		3E9AA6202CDE2CF000733571 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 3E9AA61F2CDE2CF000733571 /* SnapKit */; };
+		3E9AA6222CDE2CF000733571 /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 3E9AA6212CDE2CF000733571 /* SnapKit-Dynamic */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		3E9AA5DE2CDE1E1D00733571 /* SettingsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SettingsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		3E9AA5F02CDE1E1F00733571 /* Exceptions for "SettingsApp" folder in "SettingsApp" target */ = {
+		3E9AA61D2CDE2B8500733571 /* Exceptions for "SettingsApp" folder in "SettingsApp" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				Info.plist,
+				SupportedFiles/Info.plist,
 			);
 			target = 3E9AA5DD2CDE1E1D00733571 /* SettingsApp */;
 		};
@@ -24,7 +29,7 @@
 		3E9AA5E02CDE1E1D00733571 /* SettingsApp */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				3E9AA5F02CDE1E1F00733571 /* Exceptions for "SettingsApp" folder in "SettingsApp" target */,
+				3E9AA61D2CDE2B8500733571 /* Exceptions for "SettingsApp" folder in "SettingsApp" target */,
 			);
 			path = SettingsApp;
 			sourceTree = "<group>";
@@ -36,6 +41,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E9AA6202CDE2CF000733571 /* SnapKit in Frameworks */,
+				3E9AA6222CDE2CF000733571 /* SnapKit-Dynamic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +85,8 @@
 			);
 			name = SettingsApp;
 			packageProductDependencies = (
+				3E9AA61F2CDE2CF000733571 /* SnapKit */,
+				3E9AA6212CDE2CF000733571 /* SnapKit-Dynamic */,
 			);
 			productName = SettingsApp;
 			productReference = 3E9AA5DE2CDE1E1D00733571 /* SettingsApp.app */;
@@ -107,6 +116,9 @@
 			);
 			mainGroup = 3E9AA5D52CDE1E1D00733571;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				3E9AA61E2CDE2CF000733571 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 3E9AA5DF2CDE1E1D00733571 /* Products */;
 			projectDirPath = "";
@@ -147,11 +159,10 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 44BYQLNMPV;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = SettingsApp/Info.plist;
+				INFOPLIST_FILE = SettingsApp/SupportedFiles/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
@@ -181,11 +192,10 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 44BYQLNMPV;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = SettingsApp/Info.plist;
+				INFOPLIST_FILE = SettingsApp/SupportedFiles/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
@@ -347,6 +357,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		3E9AA61E2CDE2CF000733571 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3E9AA61F2CDE2CF000733571 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3E9AA61E2CDE2CF000733571 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		3E9AA6212CDE2CF000733571 /* SnapKit-Dynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3E9AA61E2CDE2CF000733571 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = "SnapKit-Dynamic";
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 3E9AA5D62CDE1E1D00733571 /* Project object */;
 }
