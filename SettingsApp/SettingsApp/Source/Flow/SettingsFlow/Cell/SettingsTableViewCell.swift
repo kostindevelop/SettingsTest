@@ -76,8 +76,7 @@ class SettingsTableViewCell: UITableViewCell {
         containerView.snp.makeConstraints {
             $0.edges.equalToSuperview()
         }
-        containerView.backgroundColor = UIColor.systemBackground
-        containerView.layer.cornerRadius = 16
+        containerView.backgroundColor = .white
         
         containerView.addSubview(leftImageView)
         leftImageView.snp.makeConstraints {

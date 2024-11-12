@@ -31,7 +31,7 @@ final class SettingsCoordinator {
 
 // MARK: - SettingsModelNavigationHandler
 extension SettingsCoordinator: SettingsModelNavigationHandler {
-    func settingsModelNotificationSettingsAction(_ model: SettingsModel) {
+    func settingsModelNotificationAction(_ model: SettingsModel) {
         showAlert(message: "Notification")
     }
     
@@ -56,6 +56,7 @@ extension SettingsCoordinator: SettingsModelNavigationHandler {
     }
     
     func settingsModelLogoutAction(_ model: SettingsModel) {
+        // прокидываю в AppCoordinator для демонстрации как бы работала обработка событий: показа внешних контроллеров
         navigationHandler?.settingsCoordinatorPresentLogout(self)
     }
 }

@@ -46,9 +46,7 @@ extension SettingsViewController: UITableViewDataSource {
         cell.setup(cellViewModel)
         
         if section.cellViewModels.count == 1 {
-            cell.configureRounding(.allCorners)
-        } else if indexPath.row == 0 {
-            cell.configureRounding(.topCorners)
+            cell.configureRounding(.bottomCorners)
         } else if indexPath.row > 0, indexPath.row != section.cellViewModels.count - 1 {
             cell.configureRounding(.none)
         } else if indexPath.row == section.cellViewModels.count - 1 {
@@ -102,7 +100,6 @@ private extension SettingsViewController {
         tableView.dataSource = self
         tableView.showsVerticalScrollIndicator = false
         tableView.register(SettingsTableViewCell.self, forCellReuseIdentifier: SettingsTableViewCell.identifier)
-                view.addSubview(tableView)
         tableView.register(TitleLabelHeaderView.self, forHeaderFooterViewReuseIdentifier: TitleLabelHeaderView.identifier)
     }
     

@@ -8,7 +8,7 @@
 import Foundation
 
 protocol SettingsModelNavigationHandler {
-    func settingsModelNotificationSettingsAction(_ model: SettingsModel)
+    func settingsModelNotificationAction(_ model: SettingsModel)
     func settingsModelChangeLanguageAction(_ model: SettingsModel)
     func settingsModelSubscriptionAction(_ model: SettingsModel)
     func settingsModelChangePasswordAction(_ model: SettingsModel)
@@ -45,7 +45,7 @@ final class SettingsModel: SettingsModelProtocol {
         // switch action реализовал тут в случае если прийдется обработать какой то запрос или логику
         switch action {
         case .notificationSettings:
-            navigationHandler.settingsModelNotificationSettingsAction(self)
+            navigationHandler.settingsModelNotificationAction(self)
         case .changeLanguage:
             navigationHandler.settingsModelChangeLanguageAction(self)
         case .subscription:
